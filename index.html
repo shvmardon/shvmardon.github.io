@@ -55,14 +55,50 @@
     main { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem 4rem; }
 
     #home {
-      display: grid; grid-template-columns: auto 1fr; gap: 2.5rem;
-      align-items: start; padding: 4rem 0 3rem; border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      padding: 4rem 2rem 3rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      border-radius: 0;
+      overflow: hidden;
+      margin-top: 0;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      padding-left: calc(50vw - 340px);
+      padding-right: calc(50vw - 340px);
+      min-height: 100vh;
+      align-content: center;
+      background:
+        linear-gradient(to bottom, rgba(10,20,40,0.55) 0%, rgba(10,20,40,0.72) 100%),
+        url('https://uzbek-travel.com/images/cms/data/8lklthl5tdduj28px4aynm4to5terdjw.jpg') center/cover no-repeat;
+      color: #fff;
     }
-    .hero-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border); }
+   #home { text-align: center; grid-template-columns: 1fr; justify-items: center; }
+    #home .hero-text { display: flex; flex-direction: column; align-items: center; }
+    #home .hero-text h1 { color: #fff; font-size: 2.6rem; font-weight: 700; }
+    #home .hero-text .title { color: rgba(255,255,255,0.92); font-weight: 600; font-size: 1.1rem; }
+    #home .hero-text .institution a { color: #a8c4f0; font-weight: 600; font-size: 1rem; }
+    #home .hero-links { justify-content: center; }
+    #home .hero-links a {
+      color: rgba(255,255,255,0.85);
+      border-color: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
+    }
+    #home .hero-links a:hover {
+      color: #fff;
+      border-color: #fff;
+      background: rgba(255,255,255,0.18);
+    }
+    .hero-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); }
     .hero-photo-placeholder {
-      width: 130px; height: 130px; border-radius: 50%; background: var(--accent-lt);
+      width: 180px;
+      height: 180px; border-radius: 50%; background: var(--accent-lt);
       border: 3px solid var(--border); display: flex; align-items: center; justify-content: center;
       color: var(--accent); font-size: 2.5rem; font-family: var(--font-display); font-weight: 600; flex-shrink: 0;
+      margin: 0 auto 1rem;
     }
     .hero-text h1 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; }
     .hero-text .title { font-size: 1rem; color: var(--muted); margin-bottom: 0.2rem; }
@@ -162,27 +198,23 @@
         <div class="hero-links">
           <a href="cv.pdf" target="_blank" rel="noopener"><span class="icon">📄</span> CV</a>
           <a href="mailto:shavkatjonov.2231343@studenti.uniroma1.it"><span class="icon">✉️</span> Email</a>
-          <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener"><span class="icon">💼</span> LinkedIn</a>
-          <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener"><span class="icon">🐙</span> GitHub</a>
-          <a href="https://t.me/YOUR-USERNAME" target="_blank" rel="noopener"><span class="icon">✈️</span> Telegram</a>
+          <a href="https://www.linkedin.com/in/mardon-shavkatjonov-64b491289/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BZvOtf18lSJWQohNZ9QNxcQ%3D%3D" target="_blank" rel="noopener"><span class="icon">💼</span> LinkedIn</a>
+          <a href="https://github.com/shvmardon" target="_blank" rel="noopener"><span class="icon">🐙</span> GitHub</a>
+         <a href="https://t.me/MardonShavkatjonov" target="_blank" rel="noopener"><span class="icon">✈️</span> Telegram</a>
         </div>
       </div>
     </section>
 
     <section id="about" aria-label="About">
       <p>
+        Welcome to my website!
+        
         I am an economist and educational consultant currently pursuing a
         <strong>Master's degree in Economics and Policy Evaluation</strong> at
         <a href="https://www.uniroma1.it/en/" target="_blank" rel="noopener">Sapienza University of Rome</a>.
         My academic background spans economics, foreign economic activity, and budget control — shaped
         by studies at the University of World Economy and Diplomacy (UWED) and
         Tashkent State University of Economics (TSUE).
-      </p>
-      <p>
-        My work sits at the intersection of macroeconomics, development, and institutional analysis,
-        with a particular interest in how policy design translates into measurable outcomes.
-        I approach questions empirically, drawing on quasi-experimental methods and
-        cross-country data to understand what actually moves the needle.
       </p>
     </section>
 
