@@ -5,347 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Personal portfolio of Mardon Shavkatjonov — Master's Student in Economics and Policy Evaluation at Sapienza University of Rome." />
   <meta name="keywords" content="Mardon Shavkatjonov, Economics, Policy Evaluation, Sapienza, Research" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Mardon Shavkatjonov — Personal Portfolio" />
   <meta property="og:description" content="Master's Student in Economics and Policy Evaluation at Sapienza University of Rome." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mardonshavkatjonov.github.io/" />
-
   <title>Mardon Shavkatjonov — Personal Portfolio</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-
   <style>
-    /* ─── TOKENS ─────────────────────────────────────────────────────── */
     :root {
-      --bg:        #fafaf8;
-      --surface:   #ffffff;
-      --text:      #1a1a18;
-      --muted:     #6b6b62;
-      --accent:    #2a5298;
-      --accent-lt: #e8eef8;
-      --border:    #e4e4de;
-      --radius:    6px;
-
-      --font-body:    'Inter', system-ui, sans-serif;
+      --bg: #fafaf8; --surface: #ffffff; --text: #1a1a18; --muted: #6b6b62;
+      --accent: #2a5298; --accent-lt: #e8eef8; --border: #e4e4de; --radius: 6px;
+      --font-body: 'Inter', system-ui, sans-serif;
       --font-display: 'Lora', Georgia, serif;
-
-      --max-w: 720px;
-      --nav-h: 56px;
+      --max-w: 720px; --nav-h: 56px;
     }
-
-    /* ─── RESET ──────────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.7;
-    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.7; }
     img { display: block; max-width: 100%; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     ul { list-style: none; }
 
-    /* ─── NAVIGATION ─────────────────────────────────────────────────── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      height: var(--nav-h);
-      background: rgba(250, 250, 248, 0.92);
-      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+      background: rgba(250,250,248,0.92); backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      transition: color 0.15s;
-    }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); letter-spacing: 0.02em; transition: color 0.15s; }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
-
-    /* Hamburger (mobile) */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      color: var(--text);
-    }
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: currentColor;
-      margin: 5px 0;
-      transition: transform 0.2s, opacity 0.2s;
-    }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--text); }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: currentColor; margin: 5px 0; }
     .nav-mobile {
-      display: none;
-      position: absolute;
-      top: var(--nav-h);
-      left: 0; right: 0;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
-      flex-direction: column;
-      gap: 0.75rem;
+      display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem; flex-direction: column; gap: 0.75rem;
     }
     .nav-mobile.open { display: flex; }
     .nav-mobile a { font-size: 0.95rem; color: var(--text); font-weight: 500; }
 
-    /* ─── LAYOUT WRAPPER ─────────────────────────────────────────────── */
-    main {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 1.5rem 4rem;
-    }
+    main { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem 4rem; }
 
-    /* ─── HERO ───────────────────────────────────────────────────────── */
     #home {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2.5rem;
-      align-items: start;
-      padding: 4rem 0 3rem;
-      border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: auto 1fr; gap: 2.5rem;
+      align-items: start; padding: 4rem 0 3rem; border-bottom: 1px solid var(--border);
     }
-    .hero-photo {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--border);
-    }
+    .hero-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border); }
     .hero-photo-placeholder {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: var(--accent-lt);
-      border: 3px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 2.5rem;
-      font-family: var(--font-display);
-      font-weight: 600;
-      flex-shrink: 0;
+      width: 130px; height: 130px; border-radius: 50%; background: var(--accent-lt);
+      border: 3px solid var(--border); display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 2.5rem; font-family: var(--font-display); font-weight: 600; flex-shrink: 0;
     }
-    .hero-text h1 {
-      font-family: var(--font-display);
-      font-size: 1.9rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.35rem;
-    }
-    .hero-text .title {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-    .hero-text .institution a {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
+    .hero-text h1 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; }
+    .hero-text .title { font-size: 1rem; color: var(--muted); margin-bottom: 0.2rem; }
+    .hero-text .institution a { font-size: 0.95rem; font-weight: 500; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
     .hero-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 0.3rem 0.7rem;
-      border-radius: var(--radius);
-      transition: border-color 0.15s, color 0.15s;
+      display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem;
+      font-weight: 500; color: var(--muted); border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem; border-radius: var(--radius); transition: border-color 0.15s, color 0.15s;
     }
-    .hero-links a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      text-decoration: none;
-    }
+    .hero-links a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
     .hero-links .icon { font-size: 0.85rem; line-height: 1; }
 
-    /* ─── ABOUT ──────────────────────────────────────────────────────── */
-    #about {
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    #about p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 62ch;
-    }
+    #about { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+    #about p { color: var(--muted); font-size: 0.95rem; max-width: 62ch; }
     #about p + p { margin-top: 0.75rem; }
 
-    /* ─── SECTION SHARED ─────────────────────────────────────────────── */
-    .section {
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
     .section:last-child { border-bottom: none; }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-    }
+    .section-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--text); }
 
-    /* ─── EDUCATION TIMELINE ─────────────────────────────────────────── */
     .timeline { display: flex; flex-direction: column; gap: 1.25rem; }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.25rem 1.5rem;
-      align-items: start;
-    }
-    .timeline-item .degree {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .timeline-item .school {
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-    .timeline-item .years {
-      font-size: 0.8rem;
-      color: var(--muted);
-      white-space: nowrap;
-      padding-top: 2px;
-    }
+    .timeline-item { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1.5rem; align-items: start; }
+    .timeline-item .degree { font-weight: 600; font-size: 0.95rem; }
+    .timeline-item .school { font-size: 0.875rem; color: var(--muted); }
+    .timeline-item .years { font-size: 0.8rem; color: var(--muted); white-space: nowrap; padding-top: 2px; }
 
-    /* ─── TAGS ───────────────────────────────────────────────────────── */
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .tag {
-      font-size: 0.8rem;
-      font-weight: 500;
-      background: var(--accent-lt);
-      color: var(--accent);
-      padding: 0.3rem 0.75rem;
-      border-radius: 20px;
-    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag { font-size: 0.8rem; font-weight: 500; background: var(--accent-lt); color: var(--accent); padding: 0.3rem 0.75rem; border-radius: 20px; }
 
-    /* ─── AWARDS ─────────────────────────────────────────────────────── */
     .award-list { display: flex; flex-direction: column; gap: 1.1rem; }
     .award {
-      padding: 1rem 1.2rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.2rem 1rem;
-      align-items: start;
+      padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: var(--radius);
+      background: var(--surface); display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 1rem; align-items: start;
     }
-    .award-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-    .award-body {
-      font-size: 0.83rem;
-      color: var(--muted);
-      grid-column: 1;
-    }
-    .award-year {
-      font-size: 0.78rem;
-      color: var(--muted);
-      white-space: nowrap;
-      padding-top: 2px;
-      text-align: right;
-    }
+    .award-title { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+    .award-body { font-size: 0.83rem; color: var(--muted); grid-column: 1; }
+    .award-year { font-size: 0.78rem; color: var(--muted); white-space: nowrap; padding-top: 2px; text-align: right; }
 
-    /* ─── CONTACT ────────────────────────────────────────────────────── */
     #contact .contact-list { display: flex; flex-direction: column; gap: 0.65rem; }
-    #contact .contact-list li {
-      font-size: 0.9rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    #contact .contact-list .label {
-      font-weight: 500;
-      color: var(--text);
-      min-width: 80px;
-    }
+    #contact .contact-list li { font-size: 0.9rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
+    #contact .contact-list .label { font-weight: 500; color: var(--text); min-width: 80px; }
 
-    /* ─── FOOTER ─────────────────────────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); }
 
-    /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
     @media (max-width: 600px) {
-      #home {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.25rem;
-      }
-      .hero-photo-placeholder,
-      .hero-photo { margin: 0 auto; }
+      #home { grid-template-columns: 1fr; text-align: center; gap: 1.25rem; }
+      .hero-photo-placeholder, .hero-photo { margin: 0 auto; }
       .hero-links { justify-content: center; }
-      .timeline-item,
-      .award { grid-template-columns: 1fr; }
-      .timeline-item .years,
-      .award-year { text-align: left; padding-top: 0; }
+      .timeline-item, .award { grid-template-columns: 1fr; }
+      .timeline-item .years, .award-year { text-align: left; padding-top: 0; }
       .nav-links { display: none; }
       .nav-toggle { display: block; }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
-
 <body>
 
-  <!-- ── NAVIGATION ─────────────────────────────────────────────────── -->
   <nav>
     <div class="nav-inner">
       <span class="nav-logo">Mardon Shavkatjonov</span>
@@ -371,45 +147,28 @@
     </ul>
   </nav>
 
-  <!-- ── MAIN ───────────────────────────────────────────────────────── -->
   <main>
 
-    <!-- HERO -->
     <section id="home">
-      <!--
-        Replace the placeholder below with your photo when ready:
-        <img class="hero-photo" src="profile.jpg" alt="Mardon Shavkatjonov" />
-      -->
+      <!-- To use a real photo, replace the div below with:
+           <img class="hero-photo" src="profile.jpg" alt="Mardon Shavkatjonov" /> -->
       <div class="hero-photo-placeholder" aria-hidden="true">MS</div>
-
       <div class="hero-text">
         <h1>Mardon Shavkatjonov</h1>
         <p class="title">Master's Student in Economics and Policy Evaluation</p>
         <p class="institution">
           <a href="https://www.uniroma1.it/en/" target="_blank" rel="noopener">Sapienza University of Rome</a>
         </p>
-
         <div class="hero-links">
-          <a href="cv.pdf" target="_blank" rel="noopener">
-            <span class="icon">📄</span> CV
-          </a>
-          <a href="mailto:shavkatjonov.2231343@studenti.uniroma1.it">
-            <span class="icon">✉️</span> Email
-          </a>
-          <a href="https://linkedin.com/in/" target="_blank" rel="noopener">
-            <span class="icon">💼</span> LinkedIn
-          </a>
-          <a href="https://github.com/" target="_blank" rel="noopener">
-            <span class="icon">🐙</span> GitHub
-          </a>
-          <a href="https://t.me/" target="_blank" rel="noopener">
-            <span class="icon">✈️</span> Telegram
-          </a>
+          <a href="cv.pdf" target="_blank" rel="noopener"><span class="icon">📄</span> CV</a>
+          <a href="mailto:shavkatjonov.2231343@studenti.uniroma1.it"><span class="icon">✉️</span> Email</a>
+          <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener"><span class="icon">💼</span> LinkedIn</a>
+          <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener"><span class="icon">🐙</span> GitHub</a>
+          <a href="https://t.me/YOUR-USERNAME" target="_blank" rel="noopener"><span class="icon">✈️</span> Telegram</a>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" aria-label="About">
       <p>
         I am an economist and educational consultant currently pursuing a
@@ -427,11 +186,9 @@
       </p>
     </section>
 
-    <!-- EDUCATION -->
     <section id="education" class="section" aria-labelledby="edu-title">
       <h2 class="section-title" id="edu-title">Education</h2>
       <div class="timeline">
-
         <div class="timeline-item">
           <div>
             <p class="degree">M.Sc. in Economics and Policy Evaluation</p>
@@ -439,7 +196,6 @@
           </div>
           <span class="years">09/2025 – present</span>
         </div>
-
         <div class="timeline-item">
           <div>
             <p class="degree">Master's Studies in Foreign Economic Activity</p>
@@ -447,7 +203,6 @@
           </div>
           <span class="years">09/2024 – 09/2025</span>
         </div>
-
         <div class="timeline-item">
           <div>
             <p class="degree">B.Sc. in Budget Control and Treasury</p>
@@ -455,11 +210,9 @@
           </div>
           <span class="years">10/2020 – 07/2024</span>
         </div>
-
       </div>
     </section>
 
-    <!-- RESEARCH INTERESTS -->
     <section id="research" class="section" aria-labelledby="ri-title">
       <h2 class="section-title" id="ri-title">Research Interests</h2>
       <div class="tag-list">
@@ -470,66 +223,43 @@
       </div>
     </section>
 
-    <!-- HONORS & AWARDS -->
     <section id="awards" class="section" aria-labelledby="awards-title">
       <h2 class="section-title" id="awards-title">Honors &amp; Awards</h2>
       <div class="award-list">
-
         <div class="award">
           <p class="award-title">Finalist, International 'Eurasia' Award — Leader of Eurasia</p>
           <span class="award-year">2025</span>
-          <p class="award-body">
-            Recognized for building cross-regional youth leadership initiatives spanning multiple
-            countries across Eurasia.
-          </p>
+          <p class="award-body">Recognized for building cross-regional youth leadership initiatives spanning multiple countries across Eurasia.</p>
         </div>
-
         <div class="award">
           <p class="award-title">Best Business Project Award &amp; Professional Development Certificate</p>
           <span class="award-year">2024</span>
-          <p class="award-body">
-            MGIMO, Ministry of Foreign Affairs of the Russian Federation.
-          </p>
+          <p class="award-body">MGIMO, Ministry of Foreign Affairs of the Russian Federation.</p>
         </div>
-
         <div class="award">
           <p class="award-title">III Degree Diploma — XIV Eurasian Economic Youth Forum</p>
           <span class="award-year">2024</span>
-          <p class="award-body">
-            Ural State University of Economics (USUE). Awarded for exceptional research on
-            investment and financial policies.
-          </p>
+          <p class="award-body">Ural State University of Economics (USUE). Awarded for exceptional research on investment and financial policies.</p>
         </div>
-
         <div class="award">
           <p class="award-title">State Scholarship Named After Navoi</p>
           <span class="award-year">2023</span>
-          <p class="award-body">
-            Ministry of Higher Education, Science and Innovations of Uzbekistan. National academic
-            scholarship awarded annually to five top bachelor students across the country.
-          </p>
+          <p class="award-body">Ministry of Higher Education, Science and Innovations of Uzbekistan. National academic scholarship awarded annually to five top bachelor students across the country.</p>
         </div>
-
         <div class="award">
           <p class="award-title">Registan Scholarship Holder</p>
           <span class="award-year">2023</span>
-          <p class="award-body">
-            Registon LC. Highly competitive merit award; selected from a pool of 82,000 applicants.
-          </p>
+          <p class="award-body">Registon LC. Highly competitive merit award; selected from a pool of 82,000 applicants.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section" aria-labelledby="contact-title">
       <h2 class="section-title" id="contact-title">Contact</h2>
       <ul class="contact-list">
         <li>
           <span class="label">Email</span>
-          <a href="mailto:shavkatjonov.2231343@studenti.uniroma1.it">
-            shavkatjonov.2231343@studenti.uniroma1.it
-          </a>
+          <a href="mailto:shavkatjonov.2231343@studenti.uniroma1.it">shavkatjonov.2231343@studenti.uniroma1.it</a>
         </li>
         <li>
           <span class="label">Location</span>
@@ -540,24 +270,16 @@
 
   </main>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
   <footer>
     <p>© <span id="year"></span> Mardon Shavkatjonov</p>
   </footer>
 
-  <!-- ── MINIMAL JS ─────────────────────────────────────────────────── -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-    function closeMenu() {
-      document.getElementById('mobileMenu').classList.remove('open');
-    }
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
     document.addEventListener('click', function(e) {
-      const nav = document.querySelector('nav');
-      if (!nav.contains(e.target)) closeMenu();
+      if (!document.querySelector('nav').contains(e.target)) closeMenu();
     });
   </script>
 
