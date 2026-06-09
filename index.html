@@ -62,12 +62,18 @@
       padding: 4rem 2rem 3rem;
       border-bottom: 1px solid var(--border);
       position: relative;
-      border-radius: 12px;
+      border-radius: 0;
       overflow: hidden;
-      margin-top: 2rem;
+      margin-top: 0;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      padding-left: calc(50vw - 340px);
+      padding-right: calc(50vw - 340px);
+      min-height: 100vh;
+      align-content: center;
       background:
         linear-gradient(to bottom, rgba(10,20,40,0.55) 0%, rgba(10,20,40,0.72) 100%),
-        url('https://images.unsplash.com/photo-1589876568181-a1508b8ef473?w=1400&q=80') center/cover no-repeat;
+        url('https://uzbek-travel.com/images/cms/data/8lklthl5tdduj28px4aynm4to5terdjw.jpg') center/cover no-repeat;
       color: #fff;
     }
    #home { text-align: center; grid-template-columns: 1fr; justify-items: center; }
@@ -86,9 +92,10 @@
       border-color: #fff;
       background: rgba(255,255,255,0.18);
     }
-    .hero-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); }
+    .hero-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); }
     .hero-photo-placeholder {
-      width: 130px; height: 130px; border-radius: 50%; background: var(--accent-lt);
+      width: 180px;
+      height: 180px; border-radius: 50%; background: var(--accent-lt);
       border: 3px solid var(--border); display: flex; align-items: center; justify-content: center;
       color: var(--accent); font-size: 2.5rem; font-family: var(--font-display); font-weight: 600; flex-shrink: 0;
       margin: 0 auto 1rem;
@@ -200,6 +207,8 @@
 
     <section id="about" aria-label="About">
       <p>
+        Welcome to my website!
+        
         I am an economist and educational consultant currently pursuing a
         <strong>Master's degree in Economics and Policy Evaluation</strong> at
         <a href="https://www.uniroma1.it/en/" target="_blank" rel="noopener">Sapienza University of Rome</a>.
